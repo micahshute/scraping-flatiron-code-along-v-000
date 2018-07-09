@@ -22,7 +22,7 @@ class Scraper
 
   def make_courses
     courses_raw = get_courses
-    courses = courses_raw.map{|raw| Course.new(raw.text,)}
+    courses = courses_raw.map{|raw| Course.new(raw.text,1,1)}
   end
 
   def print_courses
