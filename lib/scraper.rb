@@ -1,7 +1,7 @@
 require 'nokogiri'
 require 'open-uri'
 require_relative './course.rb'
-require 'pry'
+
 
 class Scraper
 
@@ -28,7 +28,6 @@ class Scraper
       course.title = raw.css("h2").text
       course.description = raw.css("p").text
       course.schedule = raw.css(".date").text
-      binding.pry
     end
   end
 
