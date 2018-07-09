@@ -1,12 +1,12 @@
 module Tracker
-  @@all
+  ALL
 
   def all
-    @@all
+    ALL
   end
 
   def reset_all
-    @@all.clear
+    ALL.clear
   end
 
 end
