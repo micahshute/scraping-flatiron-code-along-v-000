@@ -11,9 +11,11 @@ module Tracker
     end
   end
   module Instance
+    
     def initialize
-      ALL.push(self)
+      self.class.all.push(self)
     end
+    
   end
 
 end
