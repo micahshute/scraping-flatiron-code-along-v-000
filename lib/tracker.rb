@@ -1,16 +1,19 @@
 module Tracker
-  ALL = []
+  module Class
+    ALL = []
 
-  def all
-    ALL
+    def all
+      ALL
+    end
+
+    def reset_all
+      ALL.clear
+    end
   end
-
-  def initialize
-    ALL.push(self)
-  end
-
-  def reset_all
-    ALL.clear
+  module Instance
+    def initialize
+      ALL.push(self)
+    end
   end
 
 end
