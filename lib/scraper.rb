@@ -18,7 +18,7 @@ class Scraper
 
   def get_courses
     doc = get_page
-    data = doc.css(".same-height-left h2")
+    data = doc.css(".post h2")
     text = data.map{|title| title.text}
     binding.pry
   end
