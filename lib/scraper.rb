@@ -17,8 +17,12 @@ class Scraper
 
   def get_courses
     doc = get_page
-    data = doc.css("article.post h2")
-    text = data.map{|title| title.text}
+    data = doc.css("article")
+  end
+
+  def make_courses
+    courses_raw = get_courses
+    courses = courses_raw.map{|raw| Course.new(raw.text,)}
   end
 
   def print_courses
