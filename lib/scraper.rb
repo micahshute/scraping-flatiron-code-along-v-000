@@ -28,6 +28,7 @@ class Scraper
       course.title = raw.css("h2").text
       course.description = raw.css("p").text
       course.schedule = raw.css(".date").text
+      course
     end
   end
 
