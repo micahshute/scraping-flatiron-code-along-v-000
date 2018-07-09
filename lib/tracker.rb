@@ -1,5 +1,5 @@
 module Tracker
-  ALL
+  ALL = []
 
   def all
     ALL
