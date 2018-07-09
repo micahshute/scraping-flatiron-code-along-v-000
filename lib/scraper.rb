@@ -26,7 +26,10 @@ class Scraper
     courses = courses_raw.map do |raw|
       course = Course.new
       course.title = raw.css("h2").text
+      course.description = raw.css("p").text
+      course.schedule = raw.css(".date").text
       binding.pry
+    end
   end
 
   def print_courses
