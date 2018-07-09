@@ -1,6 +1,7 @@
 require 'nokogiri'
 require 'open-uri'
 require_relative './course.rb'
+require 'pry'
 
 class Scraper
 
@@ -17,12 +18,15 @@ class Scraper
 
   def get_courses
     doc = get_page
-    data = doc.css("article")
+    doc.css("article")
   end
 
   def make_courses
     courses_raw = get_courses
-    courses = courses_raw.map{|raw| Course.new(raw.text,1,1)}
+    courses = courses_raw.map do |raw|
+      course = Course.new
+      course.title = raw.css("h2").text
+      binding.pry
   end
 
   def print_courses
