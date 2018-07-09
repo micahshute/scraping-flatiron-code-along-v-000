@@ -6,7 +6,7 @@ module Tracker
   end
 
   def reset_all
-    @all.clear
+    @@all.clear
   end
 
 end
