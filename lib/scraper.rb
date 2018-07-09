@@ -1,6 +1,5 @@
 require 'nokogiri'
 require 'open-uri'
-require 'pry'
 require_relative './course.rb'
 
 class Scraper
@@ -20,7 +19,6 @@ class Scraper
     doc = get_page
     data = doc.css("article.post h2")
     text = data.map{|title| title.text}
-    binding.pry
   end
 
   def print_courses
