@@ -5,19 +5,20 @@ require_relative './course.rb'
 
 class Scraper
 
-  attr_accessor :url, :doc
+  attr_accessor :url
 
   def initialize(url = "http://learn-co-curriculum.github.io/site-for-scraping/courses")
     @url = url
-    
+
   end
 
   def get_page
-    @doc = Nokogiri::HTML(open(@url))
+    Nokogiri::HTML(open(@url))
   end
 
   def get_courses
-    data = @doc.css("article.post smae-height-left h2")
+    doc = get_page
+    data = doc.css("article.post smae-height-left h2")
     text = data.text
     binding.pry
   end
